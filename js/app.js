@@ -18,8 +18,9 @@
 
   app.controller('ColorCtrl', ['$scope', 'ColorService', function ($scope, ColorService) {
     var self = $scope;
+    self.colors = [];
 
-    self.filterBanks = function(searchText){
+    self.filterColors = function(searchText){
       searchText = searchText ? searchText.toLowerCase() : '';
       return self.colors.filter(function (color) {
         var colorName = color.name.toLowerCase();
@@ -27,7 +28,7 @@
       });
     };
 
-    self.selectBank = function(color){
+    self.selectColor = function(color){
       // console.log('SelectBank', color);
     };
 
