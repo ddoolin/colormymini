@@ -4,7 +4,17 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=RobotoDraft:300,400,500,700,400italic">
     <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
-    <link rel="shortcut icon" type="image/x-icon" href="assets/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="assets/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="assets/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="assets/apple-touch-icon-152x152.png" />
+    <link rel="icon" type="image/png" href="assets/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="assets/favicon-16x16.png" sizes="16x16" />
+    <meta name="application-name" content="&nbsp;"/>
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta name="msapplication-TileImage" content="mstile-144x144.png" />
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Color my Mini</title>
@@ -19,7 +29,7 @@
     </md-toolbar>
     <div class="searchbox">
       <md-content class="md-padding">
-        <h2>Find Your Paint Code</h2>
+        <h2>Finding Your Paint Code has Never Been so Easy</h2>
         <form ng-submit="$event.preventDefault()">
           <md-autocomplete
               md-no-cache="false"
@@ -28,7 +38,7 @@
               md-items="color in filterColors(searchText)"
               md-item-text="color.name"
               md-min-length="2"
-              placeholder="Just start typing your color">
+              placeholder="Just start typing your color name">
             <md-item-template>
               <span md-highlight-text="searchText" md-highlight-flags="^i">{{color.name.toUpperCase()}}</span>
             </md-item-template>
@@ -37,7 +47,7 @@
             </md-not-found>
           </md-autocomplete>
         </form>
-        <aside>{{colors.length}} different colors Listed and counting</aside>
+        <aside>Over {{colors.length}} colors listed</aside>
       </md-content>
     </div>
     <div class="color-info" ng-show="selectedColor" layout="row">
@@ -57,19 +67,19 @@
       </div>
       <div class="code-list md-padding" flex>
         <ul>
-          <li ng-show="selectedColor.bmc">BMC Code: {{selectedColor.bmc.toUpperCase()}}</li>
-          <li ng-show="selectedColor.blvc">BLVC Code: {{selectedColor.blvc.toUpperCase()}}</li>
-          <li ng-show="selectedColor.rover">Rover Code: {{selectedColor.rover.toUpperCase()}}</li>
-          <li ng-show="selectedColor.centari">Centari Code: {{selectedColor.centari.toUpperCase()}}</li>
-          <li ng-show="selectedColor.lucite">Lucite Code: {{selectedColor.lucite.toUpperCase()}}</li>
-          <li ng-show="selectedColor.dulux">Dulux Code: {{selectedColor.dulux.toUpperCase()}}</li>
-          <li ng-show="selectedColor.dupotstandox">Dupot Standox Code: {{selectedColor.dupotstandox.toUpperCase()}}</li>
-          <li ng-show="selectedColor.glasurit">Glasurit Code: {{selectedColor.glasurit.toUpperCase()}}</li>
-          <li ng-show="selectedColor.ditzlerppg">Ditzler/PPG Code: {{selectedColor.ditzlerppg.toUpperCase()}}</li>
-          <li ng-show="selectedColor.ici">ICI Code: {{selectedColor.ici.toUpperCase()}}</li>
-          <li ng-show="selectedColor.randm">R&amp;M Code: {{selectedColor.randm.toUpperCase()}}</li>
-          <li ng-show="selectedColor.sherwin">Sherwin Williams Code: {{selectedColor.sherwin.toUpperCase()}}</li>
-          <li ng-show="selectedColor.martinsenour">Martin Senour Code: {{selectedColor.martinsenour.toUpperCase()}}</li>
+          <li ng-show="selectedColor.bmc"><span>BMC Code:</span> {{selectedColor.bmc.toUpperCase()}}</li>
+          <li ng-show="selectedColor.blvc"><span>BLVC Code:</span> {{selectedColor.blvc.toUpperCase()}}</li>
+          <li ng-show="selectedColor.rover"><span>Rover Code:</span> {{selectedColor.rover.toUpperCase()}}</li>
+          <li ng-show="selectedColor.centari"><span>Centari Code:</span> {{selectedColor.centari.toUpperCase()}}</li>
+          <li ng-show="selectedColor.lucite"><span>Lucite Code:</span> {{selectedColor.lucite.toUpperCase()}}</li>
+          <li ng-show="selectedColor.dulux"><span>Dulux Code:</span> {{selectedColor.dulux.toUpperCase()}}</li>
+          <li ng-show="selectedColor.dupotstandox"><span>Dupot Standox Code:</span> {{selectedColor.dupotstandox.toUpperCase()}}</li>
+          <li ng-show="selectedColor.glasurit"><span>Glasurit Code:</span> {{selectedColor.glasurit.toUpperCase()}}</li>
+          <li ng-show="selectedColor.ditzlerppg"><span>Ditzler/PPG Code:</span> {{selectedColor.ditzlerppg.toUpperCase()}}</li>
+          <li ng-show="selectedColor.ici"><span>ICI Code:</span> {{selectedColor.ici.toUpperCase()}}</li>
+          <li ng-show="selectedColor.randm"><span>R&amp;M Code:</span> {{selectedColor.randm.toUpperCase()}}</li>
+          <li ng-show="selectedColor.sherwin"><span>Sherwin Williams Code:</span> {{selectedColor.sherwin.toUpperCase()}}</li>
+          <li ng-show="selectedColor.martinsenour"><span>Martin Senour Code:</span> {{selectedColor.martinsenour.toUpperCase()}}</li>
         </ul>
       </div>
     </div>

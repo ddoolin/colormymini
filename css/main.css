@@ -38,6 +38,9 @@ h1 {
   margin: 0;
   padding: 0;
 }
+li span {
+  font-weight: 400;
+}
 
 md-content.md-default-theme {
   background-color: transparent;
