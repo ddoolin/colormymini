@@ -12,9 +12,14 @@
     <meta name="viewport" content="initial-scale=1" />
   </head>
   <body ng-controller="ColorCtrl">
-    <div>
+    <md-toolbar class="nav-bar">
+      <div class="md-toolbar-tools">
+        <h1 class="md-flex">Color my Mini</h1>
+      </div>
+    </md-toolbar>
+    <div class="searchbox">
       <md-content class="md-padding">
-        <h1>Find Your Paint Code</h1>
+        <h2>Find Your Paint Code</h2>
         <form ng-submit="$event.preventDefault()">
           <md-autocomplete
               md-no-cache="false"
@@ -36,21 +41,36 @@
       </md-content>
     </div>
     <div class="color-info" ng-show="selectedColor" layout="row">
-      <div flex>
+      <div class="color-details md-padding" flex>
         <div class="title">
           Color: {{selectedColor.name.toUpperCase()}}
         </div>
-        <div class="sub-info">
-
+        <div class="sub-info" ng-show="selectedColor.years">
+          Years in Service: {{selectedColor.years}}
+        </div>
+        <div class="sub-info" ng-show="selectedColor.years.length === 0">
+          Service time Unknown
+        </div>
+        <div class="sub-info" ng-show="selectedColor.color">
+          Approx Color: {{selectedColor.color.toUpperCase()}}
         </div>
       </div>
-      <div flex>
-        <div class="title">
-          BMC Paint Code: {{selectedColor.bmc.toUpperCase()}}
-        </div>
-        <div class="sub-info">
-
-        </div>
+      <div class="code-list md-padding" flex>
+        <ul>
+          <li ng-show="selectedColor.bmc">BMC Code: {{selectedColor.bmc.toUpperCase()}}</li>
+          <li ng-show="selectedColor.blvc">BLVC Code: {{selectedColor.blvc.toUpperCase()}}</li>
+          <li ng-show="selectedColor.rover">Rover Code: {{selectedColor.rover.toUpperCase()}}</li>
+          <li ng-show="selectedColor.centari">Centari Code: {{selectedColor.centari.toUpperCase()}}</li>
+          <li ng-show="selectedColor.lucite">Lucite Code: {{selectedColor.lucite.toUpperCase()}}</li>
+          <li ng-show="selectedColor.dulux">Dulux Code: {{selectedColor.dulux.toUpperCase()}}</li>
+          <li ng-show="selectedColor.dupotstandox">Dupot Standox Code: {{selectedColor.dupotstandox.toUpperCase()}}</li>
+          <li ng-show="selectedColor.glasurit">Glasurit Code: {{selectedColor.glasurit.toUpperCase()}}</li>
+          <li ng-show="selectedColor.ditzlerppg">Ditzler/PPG Code: {{selectedColor.ditzlerppg.toUpperCase()}}</li>
+          <li ng-show="selectedColor.ici">ICI Code: {{selectedColor.ici.toUpperCase()}}</li>
+          <li ng-show="selectedColor.randm">R&amp;M Code: {{selectedColor.randm.toUpperCase()}}</li>
+          <li ng-show="selectedColor.sherwin">Sherwin Williams Code: {{selectedColor.sherwin.toUpperCase()}}</li>
+          <li ng-show="selectedColor.martinsenour">Martin Senour Code: {{selectedColor.martinsenour.toUpperCase()}}</li>
+        </ul>
       </div>
     </div>
     <!-- Angular Material Dependencies -->
